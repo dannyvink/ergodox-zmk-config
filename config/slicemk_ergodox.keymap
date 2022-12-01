@@ -22,18 +22,24 @@
 		layer_1 {
 			bindings = <
 				&bootloader
-				&none &kp F1   &kp F2   &kp F3    &kp F4 &kp F5 &kp F6       &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12 &none
-				&none &none    &kp UP   &none     &none  &none  &kp C_VOL_UP &kp F2 &none  &none  &none   &none   &none   &none
-				&none &kp LEFT &kp DOWN &kp RIGHT &none  &none                      &none  &none  &none   &none   &none   &none
-				&none &none    &none    &none     &none  &none  &kp C_VOL_DN &kp F1 &none  &none  &none   &none   &none   &none
-				&none &none    &none    &none     &none                                    &none  &none   &none   &none   &none
-				                                         &none  &none        &none  &none
-				                                  &none  &none  &none        &none  &none  &none
-				                                                &none        &none
+				&none    &kp F1   &kp F2   &kp F3    &kp F4 &kp F5 &kp F6       &kp F7 &kp F8 &kp F9   &kp F10 &kp F11 &kp F12 &none
+				&none    &none    &kp UP   &none     &none  &none  &kp C_VOL_UP &kp F2 &none  &m_acwu  &m_acwi &none   &none   &none
+				&kp CAPS &kp LEFT &kp DOWN &kp RIGHT &none  &none                      &none  &none    &none   &none   &none   &none
+				&none    &none    &none    &none     &none  &none  &kp C_VOL_DN &kp F1 &none  &none    &none   &none   &none   &none
+				&none    &none    &none    &none     &none                                    &m_mvl   &m_mvd  &m_mvu  &m_mvr  &none
+				                                            &none  &none        &none  &none
+				                                     &none  &none  &none        &none  &none  &none
+				                                                   &none        &none
 			>;
 		};
 	};
 
 	ZMK_MACRO(m_terminal, bindings = <&macro_press &kp LALT>, <&macro_tap &kp SPACE>, <&macro_release &kp LALT>;)
 	ZMK_MACRO(m_ossearch, bindings = <&macro_press &kp LGUI>, <&macro_tap &kp SPACE>, <&macro_release &kp LGUI>;)
+	ZMK_MACRO(m_acwu, bindings = <&macro_press &kp LCTRL>, <&macro_press &kp LALT>, <&macro_press &kp LGUI>, <&macro_tap &kp U>, <&macro_release &kp LGUI>, <&macro_release &kp LALT>, <&macro_release &kp LCTRL>;)
+	ZMK_MACRO(m_acwi, bindings = <&macro_press &kp LCTRL>, <&macro_press &kp LALT>, <&macro_press &kp LGUI>, <&macro_tap &kp I>, <&macro_release &kp LGUI>, <&macro_release &kp LALT>, <&macro_release &kp LCTRL>;)
+	ZMK_MACRO(m_mvl, bindings = <&macro_press &kp LCTRL>, <&macro_press &kp LALT>, <&macro_press &kp LGUI>, <&macro_tap &kp LEFT>, <&macro_release &kp LGUI>, <&macro_release &kp LALT>, <&macro_release &kp LCTRL>;)
+	ZMK_MACRO(m_mvd, bindings = <&macro_press &kp LCTRL>, <&macro_press &kp LALT>, <&macro_press &kp LGUI>, <&macro_tap &kp DOWN>, <&macro_release &kp LGUI>, <&macro_release &kp LALT>, <&macro_release &kp LCTRL>;)
+	ZMK_MACRO(m_mvu, bindings = <&macro_press &kp LCTRL>, <&macro_press &kp LALT>, <&macro_press &kp LGUI>, <&macro_tap &kp UP>, <&macro_release &kp LGUI>, <&macro_release &kp LALT>, <&macro_release &kp LCTRL>;)
+	ZMK_MACRO(m_mvr, bindings = <&macro_press &kp LCTRL>, <&macro_press &kp LALT>, <&macro_press &kp LGUI>, <&macro_tap &kp RIGHT>, <&macro_release &kp LGUI>, <&macro_release &kp LALT>, <&macro_release &kp LCTRL>;)
 };
